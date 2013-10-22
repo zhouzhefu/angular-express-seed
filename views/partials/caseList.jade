@@ -1,0 +1,19 @@
+p Case List Module
+
+br
+br
+
+div(ng-class="")
+    table.listing
+        tr
+            th Case ID
+            th Case Description
+            th Kids' Name
+            th Action
+        tr(ng-repeat="case in caseList")
+            td {{ case.caseId }}
+            td
+                a(href="caseProfile/{{case.caseId}}") {{ case.caseDesc }}
+            td {{ case.kidsName }}
+            td
+                button(ng-click="delCase(case)") Delete

@@ -26,6 +26,8 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
+//console.log('__dirname = ' + __dirname);
+
 // development only
 if (app.get('env') === 'development') {
   app.use(express.errorHandler());
@@ -43,13 +45,17 @@ if (app.get('env') === 'production') {
 
 // serve index and view partials
 app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
+
 
 // JSON API
 app.get('/api/name', api.name);
 
+// JSON resource
+routes.route(app);
+
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
+
 
 
 /**
