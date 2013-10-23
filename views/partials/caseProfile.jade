@@ -1,4 +1,20 @@
 p Case Profile Module
 
-p Case Id: {{ caseProfile.caseId }}
-p Case Desc: {{ caseProfile.caseDesc }}
+br
+
+div.form
+    div.row
+        div.label Case ID
+        div.value {{ caseProfile.caseId }}
+    div.row
+        div.label Case Description
+        div.value {{ caseProfile.caseDesc }}
+    div.row
+        div.label Case Kid's Name
+        div.value {{ caseProfile.kidsName }}
+    div.row
+        div.label Case Kid's Age
+        div.value {{ caseProfile.kidsAge }}
+    div.row
+        div.label Case Kid's UIN
+        div.value {{ caseProfile.UIN }}

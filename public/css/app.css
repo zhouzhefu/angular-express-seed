@@ -36,3 +36,25 @@ table {
 table, th, td .listing {
     border: solid thin #343434;
 }
+
+.form {
+    width: 100%;
+}
+
+.form .row {
+    width: 100%;
+}
+
+.row .label {
+    background-color: #d7da72;
+    width: 30%;
+    display: inline-block;
+    border: solid thin #9C9C9C;
+}
+
+.row .value {
+    width: 60%;
+    background-color: #bbdac8;
+    display: inline-table;
+    border: solid thin #9C9C9C;
+}

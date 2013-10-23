@@ -25,6 +25,7 @@ angular.module('myApp.controllers', ['myApp.services']).
         $scope.delCase = function(targetCase) {
             var caseId = targetCase.caseId;
             CaseFactory.deleteCase(caseId);
+            $scope.caseList = CaseFactory.getAllCases();
         }
     }).
     controller('CaseProfileCtrl', function ($scope, CaseFactory, $routeParams) {
