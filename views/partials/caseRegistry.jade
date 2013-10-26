@@ -2,26 +2,31 @@ p Case Registry Module
 
 br
 
-table
-    tr
-        th Field
-        th Value
-    tr
-        td Case Description:
-        td
-            input(type="text", ng-model="newCase.caseDesc", placeholder="Case Description")
-    tr
-        td Kids' Name
-        td
-            input(type="text", ng-model="newCase.kidsName", placeholder="Kids Name")
-    tr
-        td Kids' Age
-        td
-            input(type="text", ng-model="newCase.kidsAge", placeholder="Kids Age")
-    tr
-        td Kids' UIN
-        td
-            input(type="text", ng-model="newCase.UIN", placeholder="Kids UIN")
+form(novalidate="", name="form1")
+    table
+        tr
+            th Field
+            th Value
+        tr
+            td Case Description:
+            td
+                input(type="text", ng-model="newCase.caseDesc", placeholder="Case Description")
+        tr
+            td Kids' Name
+            td
+                input(type="text", ng-model="newCase.kidsName", placeholder="Kids Name", name="cKidsName", required="")
+                div.form-validation-error(ng-show="!newCase.kidsName && form1.cKidsName.$dirty") Name is required!
+        tr
+            td Kids' Age
+            td
+                input(type="number", ng-model="newCase.kidsAge",
+                        placeholder="Kids Age", name="cKidsAge"
+                        )
+        tr
+            td Kids' UIN
+            td
+                input(type="text", ng-model="newCase.UIN", placeholder="Kids UIN", name="cKidsUIN")
+                div.form-validation-error(ng-show="!newCase.UIN && form1.cKidsUIN.$dirty") UIN is required!
 
 br
-button(ng-click="addCase()") Add Case
+button(ng-disabled="form1.$invalid" ng-click="addCase()") Add Case

@@ -7,6 +7,9 @@ angular.module('myApp.controllers', ['myApp.services']).
 
         $scope.appInfo = AppInfoFactory.getAppInfo();
 
+
+        // 2 exposed http requests in the same function results in unit-test difficult
+        // to write, since _$httpBackend_.flush() will flush both request together
         $http({
             method: 'GET',
             url: '/api/name'

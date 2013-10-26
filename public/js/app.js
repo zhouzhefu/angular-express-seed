@@ -1,13 +1,25 @@
 'use strict';
+function mergeArray(arr1, arr2) {
+    for (var one in arr2) {
+        arr1.push(arr2[one]);
+    }
 
+    return arr1;
+}
 // Declare app level module which depends on filters, and services
 
-angular.module('myApp', [
-  'myApp.controllers',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives'
-]).
+var angularModules = ['ngRoute'];
+var appModules = [
+    'myApp.controllers',
+    'myApp.filters',
+    'myApp.services',
+    'myApp.directives'
+];
+var allModules = mergeArray(angularModules, appModules);
+
+console.log(allModules);
+
+angular.module('myApp', allModules).
 config(function ($routeProvider, $locationProvider) {
         $routeProvider.
             when('/view1', {
@@ -36,3 +48,8 @@ config(function ($routeProvider, $locationProvider) {
 
   $locationProvider.html5Mode(true);
 });
+
+
+
+
+

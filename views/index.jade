@@ -1,7 +1,7 @@
 block body
     div(ng-controller='AppCtrl')
         h2 Welcome to {{ appInfo.name }}
-        h2 Hello {{name}}
+        //h2 Hello {{name}}
         ul.menu
             li
                 a(href='caseList') Case List
@@ -19,8 +19,14 @@ block body
             | Angular seed app: v
             span(app-version)
 
-    script(src='js/lib/angular/angular.js')
-    script(src='js/lib/angular/angular-resource.js')
+    script(src='js/lib/angular-1.2.0-rc.3/angular.js')
+    script(src='js/lib/angular-1.2.0-rc.3/angular-route.js')
+    script(src='js/lib/angular-1.2.0-rc.3/angular-resource.js')
+
+    //script(src='js/lib/angular/angular.js')
+    //script(src='js/lib/angular/angular-resource.js')
+
+    script(src='js/util.js')
 
     script(src='js/app.js')
     script(src='js/services.js')

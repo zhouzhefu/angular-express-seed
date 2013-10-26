@@ -58,3 +58,7 @@ table, th, td .listing {
     display: inline-table;
     border: solid thin #9C9C9C;
 }
+
+.form-validation-error {
+    color: #9c0b39;
+}
